@@ -1,0 +1,56 @@
+		SQL
+
+Q. What are SQL, DDL (Data Definition Language) and DML (Data Manipulation Language) statements?
+A. SQL - SQL is a standard programming language used to manage and manipulate relational database. It allows for querying, updating, and managing data.
+   DDL - DDL statements are used to define and manage all objects in a database, such as tables, indexes, and views.  Create, Alter, Drop.
+   DML - DML statements are used to manage data within schema objects.  Select, Insert, Update, Delete
+   DCL - DCL statements are used to control access to a database and its objects. DCL stands for Data Control Language.
+   
+Q. What is equi-join?
+A. An equi-join is a type of join that combines rows from two or more tables based on a common column or set of columns, where the condition is based on equality.
+
+Q. What is outer join?
+A. An outer join is a type of join that returns all rows from one table and matched rows from another. If there is no match, the results is NULL on the side of the table that doesn't have a match.
+
+Q. What is inner join?
+A. An inner join returns rows when there is a match in both tables being joined. It is the most common type of join.
+
+Q. What are left-join and right-join?
+A. Left-join - A left-join returns all rows from left table, and matched rows from the right table. If no match is found, NULL values are returns for columns from right table.
+   Right-join - A right-join returns all rows from right table, and matched rows from the left table. If no match is found, NULL values are returns for columns from left table.
+
+Q. What is an index?
+A. Index is a pointer to table row in ascending and descending orders. One index can be applied to one or more columns. One table may have one or more indexes.
+
+Q. What is trigger?
+A. Trigger is a special kind of stored procedure that is called on SQL query events.
+
+Q. On which events a trigger is called?
+A. Before Insert, After Insert, Before Update, After Update, Before Delete, After Delete
+
+Q. What is a view?
+A. View are responsibe to render the graphical user interface.
+
+Q. What is the disadvantage of stored procedure?
+A. It will make Application database dependent.          OR
+   Complex Debugging and Testing, Performance Issues, Maintenance Challenges, Tight Coupling with the Database, Security Concerns, Development Speed, Dependency on Database Server Resources.
+
+Q. In which case business logic are written in stored procedure?
+A. Business logic is within store procedure in database application for several reasons:
+   1. Performance Optimization.
+   2. Reduced Network Traffic.
+   3. Data Integrity.
+   4. Security
+   5. Reuse and Manitainability.
+
+Q. What is the primary key?
+A. It is a unique key, identify a record in table.
+
+Q. What is a composite key?
+A. It is a primary key that consists of multiple columns.
+
+Q. Write a query to find the second-largest salary from Employee.
+A. SELECT MAX(SALARY) FROM EMPLOYEE WHERE SALARY <  (SELECT MAX(SALARY) FROM EMPLOYEE).
+
+Q. What is Unique Key?
+A. Unique key is Uniqueness, Nullability.

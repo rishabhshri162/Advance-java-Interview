@@ -1,0 +1,148 @@
+		JDBC
+
+Q. What are the differences between Statement and PreparedStatement?
+A.Prepared statement preserves parsed queries and resues the same query with different parameters whereas Statement queries are parsed in every database call.
+
+Q. Why and when PreparedStaement is used?
+A. When the same query is fired multiple times with different parameters.
+
+Q. What is a transaction and how you can handle transactions in JDBC?
+A. A transaction is a set of SQL statement or a unit of work that will be commited and rollback together. Transaction are handled with the help of connection.setAutoCommit(false), connection.commit() and connection.rollback() method.
+
+Q. What is a commit and rollback in a transaction?
+A. If explicitly commit of all sql statement. If sql exception will be occur then transaction will be rollback.
+
+Q. What is a stored procedure and how you can call it from JDBC?
+A. Stored Procedure is collection of sql statement which compiled & stored in database. call -> Connection.prepareCall().   OR
+   create procedure inside the database. It call with Callable Statement.
+
+Q. What are IN, OUT, and INOUT arguments of CallableStatement?
+A. IN - These parameters are used to send parameter value to stored function or procedure.
+   OUT - These parameters are used to receive values from stored function or procedure.
+   INOUT - These parameters are used to send or receive values from stored function and procedure.
+
+Q. How you can retrieve multiple ResultSets from CallableStatement?
+A. ResultSet.getResultSets().
+
+Q. How you can retrieve a String return value from CallableStatement?
+A. rs.getString().
+
+Q. Describe URL in DriverManager.getConnection(url, "myLogin", "myPassword") command.
+A. 
+
+Q. What is MetaData and how you can get it?
+A. MetaData is data about database. We can get it by rs.getMetaData().
+
+Q. What are the differences between java.sql.Date and java.sql.Timestamp data type?
+A. 
+
+Q. How many types of drivers in JDBC?
+A. There are 4 types of driver.
+   1. JDBC-ODBC Bridge Driver.
+   2. Native Driver
+   3. Middleware Driver
+   4. Pure Java Driver
+
+Q. Which type of driver have you used in JDBC?
+A. Pure Java Driver
+
+Q. Where do you find concrete classes of Statement and Prepared Statement? 
+A. Java.SQL Package.
+
+Q. What is a Data connection pool?
+A. DCP is a pool of connection. It is created at the application startUp.    OR
+   Application is concurrently accessed by multiple users to access and manipulate database record.
+
+Q. What are the advantages of a database connection pool?
+A. 1. High Performance. 2. It controls number of connection created. 3. It allows application to handle more concurrent users.
+   Connection resuability and limit of maximum connection are provided by Data Connection Pool.
+
+Q. What is a Database connection pool? How do you configure database connection pool in a web application (web.xml), hibernate, WebLogic?
+A. Configure DCP "datasource" tag in web.xml.
+
+Q. If an application is connected with 4 databases then how many database connection pools are expected?
+A. 
+
+Q. How JDBC is following Bridge Design Pattern? How did you create NBPK in your application?
+A. Because JDBC is a set of interface like Connection, ResultSet, Statement etc. and we will find their implementation classes in a driver jar file(mySQLConnector.jar).
+   1. DriverManager.getConnection() follows factory design patterns 
+   2. Connection, ResultSet, Statement etc. have different implementations so follow bridge design patterns
+
+Q. What is NBPK?
+A. It is an auto-increment integer column. It does not have any business value and selected for the primary key.
+
+Q. How did you create NBPK in your application?
+A. We have added an auto-increment integer column in every table of our database and made it a primary key.
+
+Q. What is the advantage of NBPK?
+A. 1. It can offer better performance.   
+   2. It help in maintain data integrity.
+   3. It adds in database normalization. 
+   4. It can simplify structure of database.
+
+Q. What is the disadvantage of Business Primary Key?
+A. Business Primary key can be changed in the future. If you change primary key and foreign key will become invalid, and produce disintegrated data.
+
+Q. What is normalization?
+A. Achieve atomic column, primary key, and removing data redundancy is called normalization.
+
+Q. How many types of normalization forms are available?
+A. There are  3 Normalization Forms and the rest are Boyce and Codd Normalization rules.
+   a. 1NF - Each column in a table must have atomic values.  Atomic value can not be divided.
+   b. 2NF - Each Table should have Primary Key
+   c. 3NF- Data redundancy should be removed with help of Primary Key and Foreign Key
+   d. Boyce and Codd Normal Form (BCNF)
+
+Q. What is the atomic value?
+A. A value like an atom that can not be further divided. like "name" can be divided into "first name" and "last name" but "first name" can not be divided further. 
+   Or address can be divided into address, city, state, country.
+
+Q. What is De-normalization?When do you use de-normalization?
+A. When we deviate from normalization and duplicate the data in multiple table then it is de-normalization.
+
+Q. When do you use de-normalization?
+A. For optimizing time-critical report performance de-normalization is used. It will increase the report response time.
+
+Q. Why does de-normalization save time?
+A. Since tables have dependent duplicate data, getting data from table reduces join queries.
+
+Q. How do you call Stored Procedure and Function from JDBC?
+A. We execute it using CallableStatement.
+
+Q. What is the function of registerOutParameter() method in CallableStatement?
+A. Registers the OUT parameter with the specified name to the given JDBC type and type name.
+
+Q. What is the disadvantage of Stored Procedure and Functions?
+A. It will make Application Database Dependent.
+
+Q. When do you use Stored Procedure and Function in your application?
+A. It is used for reporting purposes.  Sometimes Reports need high performance so we write Stored Procedure/Function to created reports.
+
+Q. What is the Database connection pool?
+A. Application is concurrently accessed by multiple users to access and manipulate database record.
+
+Q. How do you configure the database connection pool in a web application?
+A. We will configure DCP as a "datasource" tag in web.xml file.
+
+Q. Can you configure DCP in the Desktop application?
+A. Yes, we can configure using DCP open source API.
+
+Q. How many DCP will be created for a Database?
+A. One DCP for One Database
+
+Q. Which library you have used to create a data connection pool?
+A. C3P0
+
+Q. Which library jars you have used for DCP?
+A. C3P0-0.9.2.1.jar , mchange-commons-java-0.2.3.4.jar
+
+Q. Which DCP will you use in SpringBoot?
+A. Hikari
+
+Q. Can you make an application without using DCP?
+A. No, production application can not be made without DCP.
+
+Q. Exception handle in mysql.
+A. 1. MySql - Declare Handler   Declare Continue    Declare Exit.
+   2. Oracle - Use Exception Block
+   3. MySql Server - Try Catch block

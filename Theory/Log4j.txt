@@ -1,0 +1,124 @@
+--------log4j--------
+
+1) Explain what is Log4j?
+  log4j stands for logging message for java . it is open source framework for log messages of your
+ programe to set there final destinations like databas,file,network,console.
+
+2.Lavel
+debug-info-warn-error-fatal
+
+3.environment
+ a) Devolopement(Debug lavel)
+ b) Quality assurance(info lavel)
+ c) Production(warn lavel)
+
+4.componend 
+a) logger-responsible for capturing logging info.
+b)appender- responsible for publishingl logging info various to prefered destination.
+c)layout- responsible for formating logging information in diffrent style.
+
+5.what is appender
+  it is an object to sends logging messages their final destination.
+ 
+6.types of appender
+  1)console Appender
+  2)rollingFile Appender
+  3)dailyRollingFile appender
+  4)externalFile appender
+  5)file appender
+  6)jdbc appender
+  7)null appender
+  8)smtp appender
+  9)socket appender
+  10)telnet appender
+
+ all appendar class implements from org.log4j.appender(c)
+
+7.What is rolling file appender ?
+  rolling file appender confugered creat new log file every day or create a file when given file size is finishid
+
+8.console appender
+  print log messages direct on console
+
+9) Explain what is layouts in log4j ?
+Layout in log4j is responsible for formatting logging information in different styles.
+
+
+10.Layout
+We have used PatternLayout with our appender. All the possible options are:
+1.DateLayout
+2.HTMLLayout
+3.PatternLayout
+4.SimpleLayout
+5.XMLLayout
+
+Using HTMLLayout and XMLLayout, you can generate log in HTML and in XML format as well.
+Log4
+all layout class extendsb from org.log4j.Layout(c)
+
+11) Mention what are the two static methods for obtaining a logger object?
+The two static methods for obtaining a logger object are
+
+Public static Logger getRootLogger()
+Public static Logger getLo-gger(String name)
+
+12)  Mention what are the other support objects in Log4j ?
+There are other support objects in Log4j framework they are
+
+Level Object
+Filter Object
+Object Renderer
+Log Manager
+
+13.appender conversion pattern
+
+%d: Date and time of the log entry.
+%p: Log level ( DEBUG, INFO, WARN, ERROR, FATAL etc.)
+%C: Class name from where the log message originated.
+%L: Line number from where the log message originated.
+%m: Log message content.
+%n: Newline character.
+
+%d{yyyy-MM-dd HH:mm:ss} %-5p %C{1}:%L - %m%n
+
+%d{yyyy-MM-dd HH:mm:ss}: This is a date format specifier. It displays the date and time of the log entry in the format "yyyy-MM-dd HH:mm:ss" (year-month-day hour:minute:second).
+
+%-5p: This is the log level specifier. It displays the log level left-aligned and takes up a width of 5 characters. For example, "DEBUG" or "ERROR" would be displayed as "DEBUG" or "ERROR", respectively.
+
+%C{1}:%L: This represents the class and line number from where the log message originated. %C{1} displays only the class name (without package), and %L displays the line number.
+
+-: A hyphen character is used to separate the log message content from the log level, class name, and line number.
+
+%m%n: The %m specifier represents the actual log message content, and %n adds a newline character at the end of each log entry.
+
+14. How log4j file is defined?
+Log4j file is defined by the name log4j.properties, it keeps properties in key-value pairs. By default, the log manager looks for a file name log4j.properties in the CLASSPATH.
+
+
+
+15.log4j.proparties
+log4j.rootLogger=DEBUG, file, stdout
+
+# Direct log messages to a log file
+log4j.appender.file=org.apache.log4j.RollingFileAppender
+log4j.appender.file.File=C:/Users/Sawan/Desktop/log/Test.log
+log4j.appender.file.MaxFileSize=10MB
+log4j.appender.file.layout=org.apache.log4j.PatternLayout
+log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %C{1}:%L - %m%n
+ 
+# Direct log messages to stdout
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target=System.out
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %C{1}:%L - %m%n
+
+16) Mention what is the role of filter in log4j?
+Filter objects in log4j decide whether logging request should be handled by a particular Appender or ignored.
+
+17) Mention what does .class mean in log4j context?
+In log4j context, .class is used to get the full name of your class and that string is used to configure this logger object.
+For example,
+logger.getlogget (Myclass.class)
+
+
+	
