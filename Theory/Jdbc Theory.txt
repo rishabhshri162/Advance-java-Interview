@@ -17,9 +17,9 @@ A. Stored Procedure is collection of sql statement which compiled & stored in da
    create procedure inside the database. It call with Callable Statement.
 
 Q. What are IN, OUT, and INOUT arguments of CallableStatement?
-A. IN - These parameters are used to send parameter value to stored function or procedure.
-   OUT - These parameters are used to receive values from stored function or procedure.
-   INOUT - These parameters are used to send or receive values from stored function and procedure.
+A. IN parameter is used to pass a value from the Java application to the stored procedure.
+   OUT parameter is used to receive a value from the stored procedure into the Java application.
+  INOUT parameter is used both to pass an initial value to the stored procedure and receive the modified value back.
 
 Q. How you can retrieve multiple ResultSets from CallableStatement?
 A. ResultSet.getResultSets().
