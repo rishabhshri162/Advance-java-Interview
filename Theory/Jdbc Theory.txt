@@ -22,19 +22,27 @@ A. IN parameter is used to pass a value from the Java application to the stored 
   INOUT parameter is used both to pass an initial value to the stored procedure and receive the modified value back.
 
 Q. How you can retrieve multiple ResultSets from CallableStatement?
-A. ResultSet.getResultSets().
+A. By using execute() and getMoreResults() methods of CallableStatement.
 
 Q. How you can retrieve a String return value from CallableStatement?
 A. rs.getString().
 
 Q. Describe URL in DriverManager.getConnection(url, "myLogin", "myPassword") command.
-A. 
+A. jdbc:mysql://localhost:3306/mydb
+│    │      │         │    │
+│    │      │         │    └── Database name
+│    │      │         └────── Port
+│    │      └──────────────── Host
+│    └────────────────────── Database type/driver
+└────────────────────────── JDBC protocol
+
+MySQL driver Java application aur MySQL database ke beech bridge ka kaam karta hai.
 
 Q. What is MetaData and how you can get it?
-A. MetaData is data about database. We can get it by rs.getMetaData().
+A. MetaData is data about database. we can get DatabaseMetaData using Connection.getMetaData() and ResultSetMetaData using ResultSet.getMetaData().
 
 Q. What are the differences between java.sql.Date and java.sql.Timestamp data type?
-A. 
+A. java.sql.Date represents a SQL DATE value containing year, month, and day, whereas java.sql.Timestamp represents a date and time value with precision up to nanoseconds.
 
 Q. How many types of drivers in JDBC?
 A. There are 4 types of driver.
@@ -42,6 +50,8 @@ A. There are 4 types of driver.
    2. Native Driver
    3. Middleware Driver
    4. Pure Java Driver
+
+Type 4 Driver is a 100% Pure Java JDBC driver that directly communicates with the database using the database's native protocol - no middleware, no ODBC, no native libraries needed.
 
 Q. Which type of driver have you used in JDBC?
 A. Pure Java Driver
