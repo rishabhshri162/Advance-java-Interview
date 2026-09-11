@@ -40,7 +40,7 @@ public class TestLifeCycle {
 	}
 
 	@Test
-public void test() {
+    public void test() {
 
     System.out.println("test method");
 
@@ -48,7 +48,7 @@ public void test() {
     int b = 20;
 
     assertEquals(30, a + b);
-}
+    }
 
 	@After
 	public void after() throws Exception {
