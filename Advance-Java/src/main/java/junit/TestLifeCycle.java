@@ -40,11 +40,15 @@ public class TestLifeCycle {
 	}
 
 	@Test
-	public void test() throws Exception {
+public void test() {
 
-		System.out.println("testt method");
+    System.out.println("test method");
 
-	}
+    int a = 10;
+    int b = 20;
+
+    assertEquals(30, a + b);
+}
 
 	@After
 	public void after() throws Exception {
@@ -69,7 +73,7 @@ public class TestLifeCycle {
 	public static void afterClass() throws Exception {
 		System.out.println("after class");
 
-		if (conn == null) {
+		if (conn != null) {
 			conn.close();
 		}
 
